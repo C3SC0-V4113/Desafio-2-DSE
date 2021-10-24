@@ -47,7 +47,7 @@ public class MainApp {
 			case 2:
 				System.out.println("Digite el id del producto a buscar:");
 				videojuego = new Videojuego();
-				videojuego = entity.find(Videojuego.class, scanner.nextLong());
+				videojuego = entity.find(Videojuego.class, scanner.nextInt());
 				if (videojuego != null) {
 					System.out.println(videojuego);
 					System.out.println();
@@ -55,7 +55,7 @@ public class MainApp {
 					System.out.println();
 					System.out.println("Producto no encontrado... Lista de productos completa");
 					List<Videojuego> listaVideojuegos= new ArrayList<>();
-					Query query=entity.createQuery("SELECT p FROM Producto p");
+					Query query=entity.createQuery("SELECT v FROM videojuegos v");
 					listaVideojuegos=query.getResultList();
 					for (Videojuego v : listaVideojuegos) {
 						System.out.println(v);
@@ -69,7 +69,7 @@ public class MainApp {
 				System.out.println("Digite el id del producto a actualizar:");
 				videojuego = new Videojuego();
 
-				videojuego = entity.find(Videojuego.class, scanner.nextLong());
+				videojuego = entity.find(Videojuego.class, scanner.nextInt());
 				if (videojuego != null) {
 					System.out.println(videojuego);
 					System.out.println("Digite el nombre del producto:");
@@ -89,7 +89,7 @@ public class MainApp {
 				System.out.println("Digite el id del producto a eliminar:");
 				videojuego = new Videojuego();
 
-				videojuego = entity.find(Videojuego.class, scanner.nextLong());
+				videojuego = entity.find(Videojuego.class, scanner.nextInt());
 				if (videojuego != null) {
 					System.out.println(videojuego);
 					entity.getTransaction().begin();
