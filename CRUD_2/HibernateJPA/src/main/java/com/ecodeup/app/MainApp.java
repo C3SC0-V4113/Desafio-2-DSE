@@ -42,11 +42,12 @@ public class MainApp {
 				System.out.println("Digite el nombre del estudio desarrollador:");
 				videojuego.setEstudio(scanner.nextLine());
 				
+				System.out.println("Digite el genero del videojuego:");
+				videojuego.setGenero(scanner.nextLine());
+				
 				System.out.println("Digite el año de salida del videojuego:");
 				videojuego.setAño(scanner.nextInt());
 				
-				System.out.println("Digite el genero del videojuego:");
-				videojuego.setGenero(scanner.nextLine());
 				
 				System.out.println("Digite la nota en Metacritic del videojuego:");
 				videojuego.setMetacritic(scanner.nextInt());
@@ -97,14 +98,15 @@ public class MainApp {
 					System.out.println("Digite el nombre del estudio desarrollador:");
 					videojuego.setEstudio(scanner.nextLine());
 					
-					System.out.println("Digite el año de salida del videojuego:");
-					videojuego.setAño(scanner.nextInt());
-					
 					System.out.println("Digite el genero del videojuego:");
 					videojuego.setGenero(scanner.nextLine());
 					
+					System.out.println("Digite el año de salida del videojuego:");
+					videojuego.setAño(scanner.nextInt());
+					
 					System.out.println("Digite la nota en Metacritic del videojuego:");
 					videojuego.setMetacritic(scanner.nextInt());
+					
 					entity.getTransaction().begin();
 					entity.merge(videojuego);
 					entity.getTransaction().commit();
