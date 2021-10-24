@@ -7,6 +7,10 @@
         <wb-resource deploy-path="/" source-path="/src/main/webapp" tag="defaultRootSource"/>
                 
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
+<<<<<<< HEAD
+=======
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/test/java"/>
+>>>>>>> 21ac4b16bce52cc0eb7a0d9f444d2975dbb9173c
                 
         <property name="context-root" value="HibernateJPA"/>
                 
