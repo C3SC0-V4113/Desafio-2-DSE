@@ -70,7 +70,7 @@ public class Videojuego {
 
 	@Override
 	public String toString() {
-		return "Videojuego [id="+id+", nombre="+Nombre+", Director="+Director+", Estudio="+Estudio+", Año="+Año+", Genero="+Genero+", Metacritic"+Metacritic+"]";
+		return "Videojuego [id="+id+", nombre="+Nombre+", Director="+Director+", Estudio="+Estudio+", Año="+Año+", Genero="+Genero+", Metacritic="+Metacritic+"]";
 	}
 	
 }

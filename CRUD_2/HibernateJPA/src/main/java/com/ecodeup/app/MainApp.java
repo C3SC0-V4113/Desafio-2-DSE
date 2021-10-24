@@ -20,22 +20,38 @@ public class MainApp {
 
 		EntityManager entity = JPAUtil.getEntityManagerFactory().createEntityManager();
 		while (opcion!=5) {
-			System.out.println("1. Crear Producto");
-			System.out.println("2. Buscar Producto");
-			System.out.println("3. Actualizar Producto");
-			System.out.println("4. Eliminar Producto");
+			System.out.println("1. Añadir Videojuego");
+			System.out.println("2. Buscar Videojuego");
+			System.out.println("3. Actualizar Videojuego");
+			System.out.println("4. Eliminar Videojuego");
 			System.out.println("5. Salir");
 			System.out.println("Elija una opción:");
 
 			opcion = scanner.nextInt();
 			switch (opcion) {
 			case 1:
-				System.out.println("Digite el nombre del producto:");
+				System.out.println("Digite el nombre del videojuego:");
 				videojuego = new Videojuego();
 				videojuego.setId(0);
 				scanner.nextLine();
 				videojuego.setNombre(scanner.nextLine());
+				
+				System.out.println("Digite el director del videojuego:");
+				videojuego.setDirector(scanner.nextLine());
 
+				System.out.println("Digite el nombre del estudio desarrollador:");
+				videojuego.setEstudio(scanner.nextLine());
+				
+				System.out.println("Digite el año de salida del videojuego:");
+				videojuego.setAño(scanner.nextInt());
+				
+				System.out.println("Digite el genero del videojuego:");
+				videojuego.setGenero(scanner.nextLine());
+				
+				System.out.println("Digite la nota en Metacritic del videojuego:");
+				videojuego.setMetacritic(scanner.nextInt());
+
+				
 				System.out.println(videojuego);
 				entity.getTransaction().begin();
 				entity.persist(videojuego);
@@ -45,7 +61,7 @@ public class MainApp {
 				break;
 
 			case 2:
-				System.out.println("Digite el id del producto a buscar:");
+				System.out.println("Digite el id del videojuego a buscar:");
 				videojuego = new Videojuego();
 				videojuego = entity.find(Videojuego.class, scanner.nextInt());
 				if (videojuego != null) {
@@ -53,7 +69,7 @@ public class MainApp {
 					System.out.println();
 				} else {
 					System.out.println();
-					System.out.println("Producto no encontrado... Lista de productos completa");
+					System.out.println("Videojuego no encontrado... Lista de videojuegos completa");
 					List<Videojuego> listaVideojuegos= new ArrayList<>();
 					Query query=entity.createQuery("SELECT v FROM videojuegos v");
 					listaVideojuegos=query.getResultList();
@@ -66,7 +82,7 @@ public class MainApp {
 
 				break;
 			case 3:
-				System.out.println("Digite el id del producto a actualizar:");
+				System.out.println("Digite el id del videojuego a actualizar:");
 				videojuego = new Videojuego();
 
 				videojuego = entity.find(Videojuego.class, scanner.nextInt());
@@ -75,6 +91,20 @@ public class MainApp {
 					System.out.println("Digite el nombre del producto:");
 					scanner.nextLine();
 					videojuego.setNombre(scanner.nextLine());
+					System.out.println("Digite el director del videojuego:");
+					videojuego.setDirector(scanner.nextLine());
+
+					System.out.println("Digite el nombre del estudio desarrollador:");
+					videojuego.setEstudio(scanner.nextLine());
+					
+					System.out.println("Digite el año de salida del videojuego:");
+					videojuego.setAño(scanner.nextInt());
+					
+					System.out.println("Digite el genero del videojuego:");
+					videojuego.setGenero(scanner.nextLine());
+					
+					System.out.println("Digite la nota en Metacritic del videojuego:");
+					videojuego.setMetacritic(scanner.nextInt());
 					entity.getTransaction().begin();
 					entity.merge(videojuego);
 					entity.getTransaction().commit();
