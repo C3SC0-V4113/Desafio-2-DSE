@@ -23,6 +23,9 @@
                 <p:column headerText="Nombre">
                     <h:outputText value="#{videojuegos.nombre}" />
                 </p:column>
+                                <p:column headerText="Director">
+                                    <h:outputText value="#{videojuegos.director}" />
+                </p:column>
 
                 <p:column headerText="MODIFICAR" style="text-align: center">
                     <p:commandButton icon="ui-icon-pencil" title="Modificar" oncomplete="PF('dialogoModificar').show();" update=":formModificar">
