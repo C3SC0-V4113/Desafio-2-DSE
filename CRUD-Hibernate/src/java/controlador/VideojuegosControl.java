@@ -26,21 +26,21 @@ public class VideojuegosControl {
     /**
      * Creates a new instance of VideojuegosControl
      */
-    private List<Videojuegos> listaVideojuegoss;
+    private List<Videojuegos> listaVideojuegos;
     private Videojuegos videojuegos;
 
     public VideojuegosControl() {
         videojuegos = new Videojuegos();
     }
 
-    public List<Videojuegos> getListaVideojuegoss() {
+    public List<Videojuegos> getListaVideojuegos() {
         VideojuegosDao ad = new VideojuegosDao();
-        listaVideojuegoss = ad.listarVideojuegos();
-        return listaVideojuegoss;
+        listaVideojuegos = ad.listarVideojuegos();
+        return listaVideojuegos;
     }
 
-    public void setListaVideojuegos(List<Videojuegos> listaVideojuegoss) {
-        this.listaVideojuegoss = listaVideojuegoss;
+    public void setListaVideojuegos(List<Videojuegos> listaVideojuegos) {
+        this.listaVideojuegos = listaVideojuegos;
     }
 
     public Videojuegos getVideojuegos() {
